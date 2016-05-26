@@ -3,7 +3,21 @@ import {
   Text,
   View,
   StyleSheet,
+  Image,
+  TouchableHighlight,
 } from 'react-native';
+
+class Dashboard extends React.Component{
+  render(){
+    return (
+      <View style={styles.container}>
+        <Image source={{uri: this.props.userInfo.avatar_url}}
+          style={styles.image}/>
+        <Text> Éste es el panel de control </Text>
+      </View>
+    )
+  }
+};
 
 var styles = StyleSheet.create({
   container: {
@@ -19,16 +33,5 @@ var styles = StyleSheet.create({
     alignSelf: 'center'
   }
 });
-
-class Dashboard extends React.Component{
-  render(){
-    return (
-      <View style={styles.container}>
-        <Text> Éste es el panel de control </Text>
-        <Text> {this.props.userInfo} </Text>
-      </View>
-    )
-  }
-};
 
 module.exports = Dashboard;
