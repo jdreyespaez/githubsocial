@@ -33,7 +33,7 @@ export default class Main extends React.Component{
       .then((res) => {
         if(res.message === 'Not Found'){
           this.setState({
-            error: 'User not found',
+            error: 'Usuario no encontrado',
             isLoading: false
           })
         } else {
@@ -52,6 +52,9 @@ export default class Main extends React.Component{
       });
   }
   render(){
+    var showErr = (
+      this.state.error ? <Text> {this.state.error} </Text> : <View></View>
+    );
     return (
       <View style={styles.mainContainer}>
         <Text style={styles.title}>Buscar un usuario de Github</Text>
@@ -65,6 +68,11 @@ export default class Main extends React.Component{
           underlayColor="white">
           <Text style={styles.buttonText}> SEARCH </Text>
         </TouchableHighlight>
+        <ActivityIndicatorIOS
+          animating={this.state.isLoading}
+          color="#111"
+          size="large"></ActivityIndicatorIOS>
+        {showErr}
       </View>
     )
   }
