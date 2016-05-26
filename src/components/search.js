@@ -8,15 +8,17 @@ import {
   ActivityIndicatorIOS,
 } from 'react-native';
 
-module.exports = React.createClass({
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     username: '',
-  //     isLoading: false,
-  //     error: false
-  //   }
-  // }
+export default class Main extends React.Component{
+  // S2.P1: Incluir el constructor
+  constructor(props){
+    super(props);
+    this.state = {
+      username: '',
+      isLoading: false,
+      error: false
+    }
+  }
+
   render(){
     return (
       <View style={styles.mainContainer}>
@@ -25,7 +27,7 @@ module.exports = React.createClass({
       </View>
     )
   }
-});
+};
 
 var styles = StyleSheet.create({
   mainContainer: {
