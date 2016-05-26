@@ -19,10 +19,10 @@ var styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     padding: 30,
-    marginTop: 65,
+    marginTop: 35,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#48BBEC'
+    backgroundColor: '#00c0aa'
   },
   title: {
     marginBottom: 20,
