@@ -43,6 +43,7 @@ export default class Main extends React.Component{
           })
         } else {
           this.props.navigator.push({
+            // El title no está funcionando
             title: res.name || "Seleccionar Opción",
             name: 'dashboard',
             passProps: {userInfo: res}
@@ -81,7 +82,7 @@ var styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     padding: 30,
-    marginTop: 30,
+    marginTop: 65,
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#01c0aa'
