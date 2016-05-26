@@ -24,6 +24,18 @@ export default class Main extends React.Component{
         username: event.nativeEvent.text
       });
     }
+  // S2.P5: Función handleSubmit
+  handleSubmit(){
+    // (i) actualizar el spinner de indicatorIOS,
+    this.setState({
+      isLoading: true
+    });
+    console.log('SUBMIT', this.state.username);
+    // (ii) pedir datos de Github,
+    // (iii) Nos redirigirá a la siguiente vista con la información
+    // que se pidió de Github.
+  }
+
   // S2.P2: Modificar UI e incluir el cambio de state
   render(){
     return (
@@ -33,6 +45,12 @@ export default class Main extends React.Component{
           style={styles.searchInput}
           value={this.state.username}
           onChange={this.handleChange.bind(this)} />
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handleSubmit.bind(this)}
+          underlayColor="white">
+          <Text style={styles.buttonText}> SEARCH </Text>
+        </TouchableHighlight>
       </View>
     )
   }
