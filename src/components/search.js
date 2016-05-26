@@ -8,6 +8,8 @@ import {
   ActivityIndicatorIOS,
 } from 'react-native';
 
+var api = require('../utils/api');
+
 export default class Main extends React.Component{
   // S2.P1: Incluir el constructor
   constructor(props){
@@ -32,6 +34,26 @@ export default class Main extends React.Component{
     });
     console.log('SUBMIT', this.state.username);
     // (ii) pedir datos de Github,
+    api.getBio(this.state.username)
+      .then((res) => {
+        if(res.message === 'Not Found'){
+          this.setState({
+            error: 'User not found',
+            isLoading: false
+          })
+        } else {
+          this.props.navigator.push({
+            title: res.name || "Seleccionar Opción",
+            name: 'dashboard',
+            passProps: {userInfo: res}
+          });
+          this.setState({
+            isLoading: false,
+            error: false,
+            username: ''
+          })
+        }
+      });
     // (iii) Nos redirigirá a la siguiente vista con la información
     // que se pidió de Github.
   }
