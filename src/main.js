@@ -15,7 +15,7 @@ var ROUTES = {
 module.exports = React.createClass({
   renderScene: function(route, navigator) {
     var Component = ROUTES[route.name];
-    return <Component route={route} title={route.title} navigator={navigator} />;
+    return <Component route={route} {...route.passProps} title={route.title} navigator={navigator} />;
   },
   render: function() {
     return (
@@ -34,6 +34,7 @@ module.exports = React.createClass({
 
 var styles = StyleSheet.create ({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#888'
   }
 });

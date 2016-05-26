@@ -25,6 +25,7 @@ class Dashboard extends React.Component{
     return (
       <View style={styles.container}>
         <Text> Éste es el panel de control </Text>
+        <Text> {this.props.userInfo} </Text>
       </View>
     )
   }
