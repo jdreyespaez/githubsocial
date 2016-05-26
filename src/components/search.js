@@ -3,13 +3,25 @@ import {
   View,
   Text,
   StyleSheet,
+  TextInput,
+  TouchableHighlight,
+  ActivityIndicatorIOS,
 } from 'react-native';
 
 module.exports = React.createClass({
-  render: function() {
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     username: '',
+  //     isLoading: false,
+  //     error: false
+  //   }
+  // }
+  render(){
     return (
       <View style={styles.mainContainer}>
-        <Text>Probando las rutas</Text>
+        <Text style={styles.title}>Testing the Router</Text>
+
       </View>
     )
   }
