@@ -35,7 +35,6 @@ export default class Main extends React.Component{
     // (iii) Nos redirigirá a la siguiente vista con la información
     // que se pidió de Github.
   }
-
   // S2.P2: Modificar UI e incluir el cambio de state
   render(){
     return (
