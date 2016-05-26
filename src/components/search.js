@@ -11,7 +11,6 @@ import {
 var api = require('../utils/api');
 
 export default class Main extends React.Component{
-  // S2.P1: Incluir el constructor
   constructor(props){
     super(props);
     this.state = {
@@ -20,20 +19,16 @@ export default class Main extends React.Component{
       error: false
     }
   }
-  // S2.P3: función que actualiza el TextInput
   handleChange(event){
       this.setState({
         username: event.nativeEvent.text
       });
     }
-  // S2.P5: Función handleSubmit
   handleSubmit(){
-    // (i) actualizar el spinner de indicatorIOS,
     this.setState({
       isLoading: true
     });
     console.log('SUBMIT', this.state.username);
-    // (ii) pedir datos de Github,
     api.getBio(this.state.username)
       .then((res) => {
         if(res.message === 'Not Found'){
@@ -55,10 +50,7 @@ export default class Main extends React.Component{
           })
         }
       });
-    // (iii) Nos redirigirá a la siguiente vista con la información
-    // que se pidió de Github.
   }
-  // S2.P2: Modificar UI e incluir el cambio de state
   render(){
     return (
       <View style={styles.mainContainer}>
