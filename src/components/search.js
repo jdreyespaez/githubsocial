@@ -18,12 +18,21 @@ export default class Main extends React.Component{
       error: false
     }
   }
-
+  // S2.P3: función que actualiza el TextInput
+  handleChange(event){
+      this.setState({
+        username: event.nativeEvent.text
+      });
+    }
+  // S2.P2: Modificar UI e incluir el cambio de state
   render(){
     return (
       <View style={styles.mainContainer}>
-        <Text style={styles.title}>Testing the Router</Text>
-
+        <Text style={styles.title}>Buscar un usuario de Github</Text>
+        <TextInput
+          style={styles.searchInput}
+          value={this.state.username}
+          onChange={this.handleChange.bind(this)} />
       </View>
     )
   }
