@@ -1,6 +1,7 @@
 import React from 'react';
 import Badge from './badge';
 import Separator from './helpers/separator';
+import Web from './helpers/web';
 
 import {
   ScrollView,
@@ -13,7 +14,11 @@ import {
 class Repositories extends React.Component{
   // S6.P4.2 Incluir mensaje del URL que se muestra, por ahora
   openPage(url){
-    console.log('La URL es: ', url);
+    // S7.P1 Crear la ruta en Navigator para mostrar el Web View
+    this.props.navigator.push({
+      name: 'web',
+      passProps: {url}
+    })
   }
   render(){
     // S6.P3 Vamos a mapear lo que viene de Repos
