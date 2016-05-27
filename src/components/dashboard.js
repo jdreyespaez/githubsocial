@@ -39,28 +39,38 @@ class Dashboard extends React.Component{
   render(){
     return (
       <View style={styles.container}>
-        <Image source={{uri: this.props.userInfo.avatar_url}}
-          style={styles.image}/>
-        <TouchableHighlight
-          style={this.makeBackground(0)}
-          onPress={this.goToProfile.bind(this)}
-          underlayColor="#88D4F5">
-          <Text style={styles.buttonText}> Ver Perfil </Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={this.makeBackground(1)}
-          onPress={this.goToRepos.bind(this)}
-          underlayColor="#88D4F5">
-          <Text style={styles.buttonText}> Ver Repositorios </Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={this.makeBackground(2)}
-          onPress={this.goToNotes.bind(this)}
-          underlayColor="#88D4F5">
-          <Text style={styles.buttonText}> Ver Notas </Text>
-        </TouchableHighlight>
+        <View style={[styles.photoContainer, this.border('blue')]}>
+          <Image source={{uri: this.props.userInfo.avatar_url}}
+            style={styles.image}/>
+        </View>
+        <View style={[styles.buttonsContainer, this.border('green')]}>
+          <TouchableHighlight
+            style={this.makeBackground(0)}
+            onPress={this.goToProfile.bind(this)}
+            underlayColor="#88D4F5">
+            <Text style={styles.buttonText}> Ver Perfil </Text>
+          </TouchableHighlight>
+          <TouchableHighlight
+            style={this.makeBackground(1)}
+            onPress={this.goToRepos.bind(this)}
+            underlayColor="#88D4F5">
+            <Text style={styles.buttonText}> Ver Repositorios </Text>
+          </TouchableHighlight>
+          <TouchableHighlight
+            style={this.makeBackground(2)}
+            onPress={this.goToNotes.bind(this)}
+            underlayColor="#88D4F5">
+            <Text style={styles.buttonText}> Ver Notas </Text>
+          </TouchableHighlight>
+        </View>
       </View>
     )
+  }
+  border(color) {
+    return {
+      borderColor: color,
+      borderWidth: 1,
+    }
   }
 };
 
@@ -70,7 +80,14 @@ var styles = StyleSheet.create({
     flex: 1
   },
   image: {
-    height: 350,
+    flex: 1,
+    resizeMode: 'contain',
+  },
+  photoContainer: {
+    flex: 1,
+  },
+  buttonsContainer: {
+    flex: 1,
   },
   buttonText: {
     fontSize: 24,
