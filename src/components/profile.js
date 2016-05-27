@@ -36,7 +36,9 @@ class Profile extends React.Component{
     });
     return (
       <ScrollView style={styles.container}>
-        <Badge userInfo={this.props.userInfo} />
+        <View style={styles.badgeContainer}>
+          <Badge userInfo={this.props.userInfo} />
+        </View>
         {list}
       </ScrollView>
     )
@@ -46,6 +48,9 @@ class Profile extends React.Component{
 var styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  badgeContainer: {
+    marginTop: 30,
   },
   buttonText: {
     fontSize: 18,
