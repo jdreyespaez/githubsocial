@@ -45,7 +45,11 @@ class Repositories extends React.Component{
   }
 };
 
-
+  // S6.P5 Garantizamos con propTypes que se pase la info
+  Repositories.propTypes = {
+    userInfo: React.PropTypes.object.isRequired,
+    repos: React.PropTypes.array.isRequired
+  };
 
 var styles = StyleSheet.create({
   container: {
