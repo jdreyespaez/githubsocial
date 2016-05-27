@@ -1,5 +1,6 @@
 import React from 'react';
 import Badge from './badge';
+import Separator from './helpers/separator';
 
 import {
   Text,
@@ -30,7 +31,9 @@ class Profile extends React.Component{
               <Text style={styles.rowTitle}> {this.getRowTitle(userInfo, item)} </Text>
               <Text style={styles.rowContent}> {userInfo[item]} </Text>
             </View>
+            <Separator />
           </View>
+          // S5.P9. Incluir el helper/separator como un View
         )
       }
     });
