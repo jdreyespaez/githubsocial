@@ -15,7 +15,13 @@ class Badge extends React.Component{
       <Text style={styles.handle}> {this.props.userInfo.login} </Text>
     </View>
   }
-}
+};
+
+// S5.P3 Usar propTypes como verficación de userInfo
+
+Badge.propTypes = {
+  userInfo: React.PropTypes.object.isRequired
+};
 
 var styles = StyleSheet.create({
   container: {
