@@ -47,6 +47,16 @@ class Notes extends React.Component{
         this.setState({error})
       });
   }
+  renderRow(rowData){
+    return (
+      <View>
+        <View style={styles.rowContainer}>
+          <Text> {rowData} </Text>
+        </View>
+        <Separator />
+      </View>
+    )
+  }
   footer(){
     return (
       <View style={styles.footContainer}>
@@ -68,9 +78,19 @@ class Notes extends React.Component{
   }
   render() {
     <View style={styles.container}>
+      <ListView
+        dataSource={this.state.dataSource}
+        render={this.renderRow}
+        renderHeader={() => <Badge userInfo={this.props.userInfo} /> }
+        />
       {this.footer()}
     </View>
   }
+}
+
+Notes.propTypes = {
+  userInfo: React.PropTypes.object.isRequired,
+  notes: React.PropTypes.object.isRequired
 }
 
 var styles = StyleSheet.create({
@@ -104,3 +124,5 @@ var styles = StyleSheet.create({
     flexDirection: 'row'
   }
 });
+
+module.exports = Notes;
