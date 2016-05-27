@@ -31,10 +31,12 @@ class Profile extends React.Component{
         </View>
       }
     });
-    <ScrollView style={styles.container}>
-      <Badge userInfo={this.props.userInfo} />
-      {list}
-    </ScrollView>
+    return (
+      <ScrollView style={styles.container}>
+        <Badge userInfo={this.props.userInfo} />
+        {list}
+      </ScrollView>
+    )
   }
 };
 

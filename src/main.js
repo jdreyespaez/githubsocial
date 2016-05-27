@@ -6,10 +6,13 @@ import {
 
 import Search from './components/search';
 import Dashboard from './components/dashboard';
+import Profile from './components/profile';
+
 
 var ROUTES = {
   search: Search,
   dashboard: Dashboard,
+  profile: Profile,
 };
 
 module.exports = React.createClass({

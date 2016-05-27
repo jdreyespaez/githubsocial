@@ -28,7 +28,10 @@ class Dashboard extends React.Component{
     return obj;
   }
   goToProfile(){
-    console.log('Accediendo a Perfil...');
+    this.props.navigator.push({
+      name: 'profile',
+      passProps: {userInfo: this.props.userInfo}
+    });
   }
   goToRepos(){
     console.log('Accediendo a Repositorios...');
