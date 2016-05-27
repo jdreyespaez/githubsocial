@@ -9,6 +9,12 @@ import {
 } from 'react-native';
 
 class Profile extends React.Component{
+  // S5.P6 Formateando estilos para public_repos y Mayúsculas
+  getRowTitle(user, item){
+    item = (item === 'public_repos') ? item.replace('_', ' ') : item;
+    return item[0] ? item[0].toUpperCase() + item.slice(1) : item;
+  }
+
   render(){
     var userInfo = this.props.userInfo;
     var topicArr = ['company', 'location', 'followers', 'following', 'email', 'bio', 'public_repos'];
@@ -19,7 +25,7 @@ class Profile extends React.Component{
       } else {
         <View key={index}>
           <View style={styles.rowContainer}>
-            <Text style={styles.rowTitle}> /* Aquí irá Company o Location */ </Text>
+            <Text style={styles.rowTitle}> {this.getRowTitle(userInfo, item)} </Text>
             <Text style={styles.rowContent}> {userInfo[item]} </Text>
           </View>
         </View>
@@ -27,6 +33,7 @@ class Profile extends React.Component{
     });
     <ScrollView style={styles.container}>
       <Badge userInfo={this.props.userInfo} />
+      {list}
     </ScrollView>
   }
 };
