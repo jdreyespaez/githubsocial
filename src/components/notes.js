@@ -28,6 +28,25 @@ class Notes extends React.Component{
       note: e.nativeEvent.text
     });
   }
+  handleSubmit(){
+    var note = this.state.note;
+    this.setState({
+      note: ''
+    })
+
+    Api.addNote(this.props.userInfo.login, note)
+      .then((data) => {
+        Api.getNotes(this.props.userInfo.login)
+          .then((data) => {
+            this.setState({
+              dataSource: this.ds.cloneWithRows(data);
+            })
+          })
+      }).catch((err) => {
+        console.log('Falló el request', err);
+        this.setState({error})
+      });
+  }
   footer(){
     return (
       <View style={styles.footContainer}>
@@ -35,8 +54,15 @@ class Notes extends React.Component{
           style={styles.searchInput}
           value={this.state.note}
           onChange={this.handleChange.bind(this)}
-          placeholder="New Note"
+          placeholder="Nueva Nota"
           />
+        // S8.P4 Incluir el botón que maneja el evento touch
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handleSubmit.bind(this)}
+          underlayColor="#88D4F5">
+          <Text style={styles.buttonText}> Enviar </Text>
+        </TouchableHighlight>
       </View>
     )
   }
