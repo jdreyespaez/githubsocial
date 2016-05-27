@@ -7,12 +7,14 @@ import {
 import Search from './components/search';
 import Dashboard from './components/dashboard';
 import Profile from './components/profile';
+import Repositories from './components/repositories';
 
 
 var ROUTES = {
   search: Search,
   dashboard: Dashboard,
   profile: Profile,
+  repositories: Repositories,
 };
 
 module.exports = React.createClass({

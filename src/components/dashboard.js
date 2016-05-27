@@ -7,6 +7,9 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import Api from '../utils/api';
+import Repositories from './repositories';
+
 class Dashboard extends React.Component{
   // S4.P3: Estructura de los botones y colores con función
   makeBackground(btn){
@@ -35,7 +38,16 @@ class Dashboard extends React.Component{
     });
   }
   goToRepos(){
-    console.log('Accediendo a Repositorios...');
+    Api.getRepos(this.props.userInfo.login)
+      .then((res) => {
+        this.props.navigator.push({
+          name: 'repositories',
+          passProps: {
+            userInfo: this.props.userInfo,
+            repos: res
+          }
+        });
+      });
   }
   goToNotes(){
     console.log('Accediendo a Notas...');

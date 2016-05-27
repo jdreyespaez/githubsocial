@@ -35,11 +35,12 @@ class Repositories extends React.Component{
         <Separator />
       </View>
     )
-    })
+  });
     // S6.P2 Incluimos el componente reusable Badge
     return (
       <ScrollView style={styles.container}>
         <Badge userInfo={this.props.userInfo} />
+        {list}
       </ScrollView>
     )
   }
