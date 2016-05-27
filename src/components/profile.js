@@ -19,16 +19,19 @@ class Profile extends React.Component{
     var userInfo = this.props.userInfo;
     var topicArr = ['company', 'location', 'followers', 'following', 'email', 'bio', 'public_repos'];
     var list = topicArr.map((item, index) => {
-      // Lo que está vacío. No todos lo completan igual su gitHub.
       if(!userInfo[item]){
-        return <View key={index} />
+        return (
+          <View key={index} />
+        )
       } else {
-        <View key={index}>
-          <View style={styles.rowContainer}>
-            <Text style={styles.rowTitle}> {this.getRowTitle(userInfo, item)} </Text>
-            <Text style={styles.rowContent}> {userInfo[item]} </Text>
+        return (
+          <View key={index}>
+            <View style={styles.rowContainer}>
+              <Text style={styles.rowTitle}> {this.getRowTitle(userInfo, item)} </Text>
+              <Text style={styles.rowContent}> {userInfo[item]} </Text>
+            </View>
           </View>
-        </View>
+        )
       }
     });
     return (
