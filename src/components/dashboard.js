@@ -27,6 +27,7 @@ class Dashboard extends React.Component{
 
     return obj;
   }
+  // S5.P7 Apuntar a la siguiente vista que quiero
   goToProfile(){
     this.props.navigator.push({
       name: 'profile',

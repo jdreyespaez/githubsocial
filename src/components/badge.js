@@ -19,8 +19,7 @@ class Badge extends React.Component{
   }
 };
 
-// S5.P3 Usar propTypes como verficación de userInfo
-
+// S5.P3 Usar propTypes como verificación de userInfo
 Badge.propTypes = {
   userInfo: React.PropTypes.object.isRequired
 };
