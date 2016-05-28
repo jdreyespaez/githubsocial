@@ -1,14 +1,13 @@
 import React from 'react';
 import Api from '../utils/api';
 import Separator from './helpers/separator';
-import Badge from '/badge';
+import Badge from './badge';
 
 import {
   View,
   Text,
   ListView,
   TextInput,
-  StyleSheet,
   StyleSheet,
   TouchableHighlight,
 } from 'react-native';
@@ -39,7 +38,7 @@ class Notes extends React.Component{
         Api.getNotes(this.props.userInfo.login)
           .then((data) => {
             this.setState({
-              dataSource: this.ds.cloneWithRows(data);
+              dataSource: this.ds.cloneWithRows(data)
             })
           })
       }).catch((err) => {
@@ -57,6 +56,7 @@ class Notes extends React.Component{
       </View>
     )
   }
+  // Desde dónde se agregarán las Notas. Estará en el footer.
   footer(){
     return (
       <View style={styles.footContainer}>
@@ -66,7 +66,6 @@ class Notes extends React.Component{
           onChange={this.handleChange.bind(this)}
           placeholder="Nueva Nota"
           />
-        // S8.P4 Incluir el botón que maneja el evento touch
         <TouchableHighlight
           style={styles.button}
           onPress={this.handleSubmit.bind(this)}
@@ -77,21 +76,23 @@ class Notes extends React.Component{
     )
   }
   render() {
-    <View style={styles.container}>
-      <ListView
-        dataSource={this.state.dataSource}
-        render={this.renderRow}
-        renderHeader={() => <Badge userInfo={this.props.userInfo} /> }
-        />
-      {this.footer()}
-    </View>
+    return (
+      <View style={styles.container}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow}
+          renderHeader={() => <Badge userInfo={this.props.userInfo} /> }
+          />
+        {this.footer()}
+      </View>
+    )
   }
-}
+};
 
 Notes.propTypes = {
   userInfo: React.PropTypes.object.isRequired,
   notes: React.PropTypes.object.isRequired
-}
+};
 
 var styles = StyleSheet.create({
   container: {
@@ -104,8 +105,9 @@ var styles = StyleSheet.create({
   },
   button: {
     height: 60,
-    backgroundColor: '#48BBEC',
-    flex: 3,
+    backgroundColor: '#01c0aa',
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center'
   },
   searchInput: {

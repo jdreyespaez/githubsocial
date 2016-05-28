@@ -66,7 +66,7 @@ export default class Main extends React.Component{
           style={styles.button}
           onPress={this.handleSubmit.bind(this)}
           underlayColor="white">
-          <Text style={styles.buttonText}> SEARCH </Text>
+          <Text style={styles.buttonText}> BUSCAR </Text>
         </TouchableHighlight>
         <ActivityIndicatorIOS
           animating={this.state.isLoading}

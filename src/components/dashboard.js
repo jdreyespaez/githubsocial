@@ -9,6 +9,7 @@ import {
 
 import Api from '../utils/api';
 import Repositories from './repositories';
+import Notes from './notes';
 
 class Dashboard extends React.Component{
   // S4.P3: Estructura de los botones y colores con función
@@ -49,8 +50,19 @@ class Dashboard extends React.Component{
         });
       });
   }
+  // S8.P7 Pegar en Navigator
   goToNotes(){
-    console.log('Accediendo a Notas...');
+    Api.getNotes(this.props.userInfo.login)
+      .then((res) => {
+        res = res || {};
+        this.props.navigator.push({
+          name: 'notes',
+          passProps: {
+            notes: res,
+            userInfo: this.props.userInfo
+          }
+        });
+      });
   }
   render(){
     return (

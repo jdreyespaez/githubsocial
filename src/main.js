@@ -9,6 +9,7 @@ import Dashboard from './components/dashboard';
 import Profile from './components/profile';
 import Repositories from './components/repositories';
 import Web from './components/helpers/web';
+import Notes from './components/notes';
 
 var ROUTES = {
   search: Search,
@@ -16,6 +17,7 @@ var ROUTES = {
   profile: Profile,
   repositories: Repositories,
   web: Web,
+  notes: Notes,
 };
 
 module.exports = React.createClass({
