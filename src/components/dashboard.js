@@ -69,6 +69,14 @@ class Dashboard extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
+          <View style={styles.toolBar}>
+            <View style={[styles.backButton, this.border('green')]}>
+              <Text>Buscar</Text>
+            </View>
+            <View style={[styles.title, this.border('blue')]}>
+              <Text>Prueba</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.container}>
           <View style={[styles.photoContainer]}>
@@ -112,6 +120,15 @@ var styles = StyleSheet.create({
   },
   navBar: {
     height: 60,
+  },
+  toolBar: {
+    flexDirection: 'row',
+  },
+  backButton: {
+    flex: 1,
+  },
+  title: {
+    flex: 1
   },
   container: {
     flex: 1

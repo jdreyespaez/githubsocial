@@ -96,7 +96,6 @@ var styles = StyleSheet.create({
   toolbar: {
     flex: 2,
     flexDirection: 'row',
-
   },
   textToolbar: {
     textAlign: 'center',
