@@ -10,6 +10,7 @@ import {
 import Api from '../utils/api';
 import Repositories from './repositories';
 import Notes from './notes';
+import Badge from './badge';
 
 class Dashboard extends React.Component{
   // S4.P3: Estructura de los botones y colores con función
@@ -66,30 +67,33 @@ class Dashboard extends React.Component{
   }
   render(){
     return (
-      <View style={styles.container}>
-        <View style={[styles.photoContainer]}>
-          <Image source={{uri: this.props.userInfo.avatar_url}}
-            style={styles.image}/>
+      <View style={styles.mainContainer}>
+        <View style={styles.navBar}>
         </View>
-        <View style={[styles.buttonsContainer]}>
-          <TouchableHighlight
-            style={this.makeBackground(0)}
-            onPress={this.goToProfile.bind(this)}
-            underlayColor="#88D4F5">
-            <Text style={styles.buttonText}> Ver Perfil </Text>
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={this.makeBackground(1)}
-            onPress={this.goToRepos.bind(this)}
-            underlayColor="#88D4F5">
-            <Text style={styles.buttonText}> Ver Repositorios </Text>
-          </TouchableHighlight>
-          <TouchableHighlight
-            style={this.makeBackground(2)}
-            onPress={this.goToNotes.bind(this)}
-            underlayColor="#88D4F5">
-            <Text style={styles.buttonText}> Ver Notas </Text>
-          </TouchableHighlight>
+        <View style={styles.container}>
+          <View style={[styles.photoContainer]}>
+            <Badge userInfo={this.props.userInfo} />
+          </View>
+          <View style={[styles.buttonsContainer]}>
+            <TouchableHighlight
+              style={this.makeBackground(0)}
+              onPress={this.goToProfile.bind(this)}
+              underlayColor="#88D4F5">
+              <Text style={styles.buttonText}> Ver Perfil </Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+              style={this.makeBackground(1)}
+              onPress={this.goToRepos.bind(this)}
+              underlayColor="#88D4F5">
+              <Text style={styles.buttonText}> Ver Repositorios </Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+              style={this.makeBackground(2)}
+              onPress={this.goToNotes.bind(this)}
+              underlayColor="#88D4F5">
+              <Text style={styles.buttonText}> Ver Notas </Text>
+            </TouchableHighlight>
+          </View>
         </View>
       </View>
     )
@@ -103,8 +107,13 @@ class Dashboard extends React.Component{
 };
 
 var styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1
+  },
+  navBar: {
+    height: 60,
+  },
   container: {
-    marginTop: 65,
     flex: 1
   },
   image: {
