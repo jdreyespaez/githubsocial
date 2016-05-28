@@ -33,9 +33,12 @@ class Dashboard extends React.Component{
 
     return obj;
   }
+  onPress = () => {
+    console.log('Hola JD!');
+    this.props.navigator.pop();
+  }
   // S5.P7 Apuntar a la siguiente vista que quiero
   goToProfile(){
-    console.log(this.props.navigator);
     this.props.navigator.push({
       name: 'profile',
       passProps: {userInfo: this.props.userInfo}
@@ -71,7 +74,7 @@ class Dashboard extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar />
+          <ToolBar backToPage={this.onPress} />
         </View>
         <View style={styles.container}>
           <View style={[styles.badgeContainer]}>

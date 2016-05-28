@@ -8,12 +8,13 @@ import {
 
 class ToolBar extends React.Component{
   render (){
+    console.log(this.props)
     return (
       <View style={styles.toolBar}>
         <View style={[styles.backButton ]}>
           <TouchableHighlight
             underlayColor={'white'}
-            onPress={this.onBackPress}>
+            onPress={this.onBackPress.bind(this)}>
             <Text style={styles.textToolBar}>Atrás</Text>
           </TouchableHighlight>
         </View>
@@ -26,7 +27,7 @@ class ToolBar extends React.Component{
     )
   }
   onBackPress(){
-      this.props.navigator.pop();
+      this.props.backToPage();
   }
   border(color) {
     return {

@@ -2,6 +2,7 @@ import React from 'react';
 import Api from '../utils/api';
 import Separator from './helpers/separator';
 import Badge from './badge';
+import ToolBar from './toolBar';
 
 import {
   View,
@@ -77,13 +78,18 @@ class Notes extends React.Component{
   }
   render() {
     return (
-      <View style={styles.container}>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderRow}
-          renderHeader={() => <Badge userInfo={this.props.userInfo} /> }
-          />
-        {this.footer()}
+      <View style={styles.mainContainer}>
+        <View style={styles.navBar}>
+          <ToolBar />
+        </View>
+        <View style={styles.container}>
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow}
+            renderHeader={() => <Badge userInfo={this.props.userInfo} /> }
+            />
+          {this.footer()}
+        </View>
       </View>
     )
   }
@@ -95,6 +101,14 @@ Notes.propTypes = {
 };
 
 var styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1
+  },
+  navBar: {
+    height: 60,
+    borderBottomColor: 'rgba(21, 21, 21, 0.3)',
+    borderBottomWidth: 0.3,
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -105,7 +119,7 @@ var styles = StyleSheet.create({
   },
   button: {
     height: 60,
-    backgroundColor: '#01c0aa',
+    backgroundColor: '#6200EA',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
