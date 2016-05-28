@@ -76,6 +76,8 @@ class Dashboard extends React.Component{
             <View style={[styles.title, this.border('blue')]}>
               <Text>Prueba</Text>
             </View>
+            <View style={[styles.backButton, this.border('green')]}>
+            </View>
           </View>
         </View>
         <View style={styles.container}>
@@ -123,12 +125,15 @@ var styles = StyleSheet.create({
   },
   toolBar: {
     flexDirection: 'row',
+    paddingTop: 30
   },
   backButton: {
     flex: 1,
+    alignItems: 'center',
   },
   title: {
-    flex: 1
+    flex: 5,
+    alignItems: 'center'
   },
   container: {
     flex: 1
