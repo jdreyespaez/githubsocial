@@ -58,7 +58,7 @@ export default class Main extends React.Component{
     return (
       <View style={styles.container}>
         <View style={[styles.toolbar]}>
-          <Text style={[styles.textToolbar]}>Github Social App</Text>
+          <Text style={[styles.textToolbar]}>Githapp</Text>
         </View>
         <View style={styles.mainContainer}>
           <Text style={styles.title}>Buscar un usuario de Github</Text>
@@ -108,7 +108,7 @@ var styles = StyleSheet.create({
     padding: 30,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundColor: '#01c0aa'
+    backgroundColor: '#512DA8'
   },
   title: {
     marginBottom: 20,

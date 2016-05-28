@@ -23,11 +23,11 @@ class Dashboard extends React.Component{
     }
 
     if(btn === 0){
-      obj.backgroundColor = '#533C70';
+      obj.backgroundColor = '#673AB7';
     } else if (btn === 1){
-      obj.backgroundColor = '#6386D8';
+      obj.backgroundColor = '#7E57C2';
     } else {
-      obj.backgroundColor = '#56C4B7';
+      obj.backgroundColor = '#9575CD';
     }
 
     return obj;
@@ -71,10 +71,10 @@ class Dashboard extends React.Component{
         <View style={styles.navBar}>
           <View style={styles.toolBar}>
             <View style={[styles.backButton, this.border('green')]}>
-              <Text>Buscar</Text>
+              <Text>Atrás</Text>
             </View>
             <View style={[styles.title, this.border('blue')]}>
-              <Text>Prueba</Text>
+              <Text>Githapp</Text>
             </View>
             <View style={[styles.backButton, this.border('green')]}>
             </View>

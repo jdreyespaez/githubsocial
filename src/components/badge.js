@@ -28,7 +28,7 @@ Badge.propTypes = {
 
 var styles = StyleSheet.create({
   container: {
-    backgroundColor: '#48BBEC',
+    backgroundColor: '#512DA8',
     paddingBottom: 10,
     flex: 1
   },
