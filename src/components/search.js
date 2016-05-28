@@ -56,33 +56,57 @@ export default class Main extends React.Component{
       this.state.error ? <Text> {this.state.error} </Text> : <View></View>
     );
     return (
-      <View style={styles.mainContainer}>
-        <Text style={styles.title}>Buscar un usuario de Github</Text>
-        <TextInput
-          style={styles.searchInput}
-          value={this.state.username}
-          onChange={this.handleChange.bind(this)} />
-        <TouchableHighlight
-          style={styles.button}
-          onPress={this.handleSubmit.bind(this)}
-          underlayColor="white">
-          <Text style={styles.buttonText}> BUSCAR </Text>
-        </TouchableHighlight>
-        <ActivityIndicatorIOS
-          animating={this.state.isLoading}
-          color="#111"
-          size="large"></ActivityIndicatorIOS>
-        {showErr}
+      <View style={styles.container}>
+        <View style={[styles.toolbar]}>
+          <Text style={[styles.textToolbar]}>Github Social App</Text>
+        </View>
+        <View style={styles.mainContainer}>
+          <Text style={styles.title}>Buscar un usuario de Github</Text>
+          <TextInput
+            style={styles.searchInput}
+            value={this.state.username}
+            onChange={this.handleChange.bind(this)} />
+          <TouchableHighlight
+            style={styles.button}
+            onPress={this.handleSubmit.bind(this)}
+            underlayColor="white">
+            <Text style={styles.buttonText}> BUSCAR </Text>
+          </TouchableHighlight>
+          <ActivityIndicatorIOS
+            animating={this.state.isLoading}
+            color="#111"
+            size="large"></ActivityIndicatorIOS>
+          {showErr}
+        </View>
       </View>
     )
+  }
+  border(color) {
+    return {
+      borderColor: color,
+      borderWidth: 1,
+    }
   }
 };
 
 var styles = StyleSheet.create({
-  mainContainer: {
+  container: {
     flex: 1,
+  },
+  toolbar: {
+    flex: 2,
+    flexDirection: 'row',
+
+  },
+  textToolbar: {
+    textAlign: 'center',
+    flex: 1,
+    alignSelf: 'center',
+    fontSize: 28
+  },
+  mainContainer: {
+    flex: 12,
     padding: 30,
-    marginTop: 65,
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#01c0aa'

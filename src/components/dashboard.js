@@ -67,11 +67,11 @@ class Dashboard extends React.Component{
   render(){
     return (
       <View style={styles.container}>
-        <View style={[styles.photoContainer, this.border('blue')]}>
+        <View style={[styles.photoContainer]}>
           <Image source={{uri: this.props.userInfo.avatar_url}}
             style={styles.image}/>
         </View>
-        <View style={[styles.buttonsContainer, this.border('green')]}>
+        <View style={[styles.buttonsContainer]}>
           <TouchableHighlight
             style={this.makeBackground(0)}
             onPress={this.goToProfile.bind(this)}

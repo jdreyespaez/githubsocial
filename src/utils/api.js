@@ -12,13 +12,13 @@ var api = {
   // S8.P1 Pedir un usuario
   getNotes(username){
     username = username.toLowerCase().trim();
-    var url = `https://github-social.firebaseio.com/${username}.json`;
+    var url = `https://github-social-app.firebaseio.com/${username}.json`;
     return fetch(url).then((res) => res.json());
   },
   // S8.P2 Crear un usuario
   addNote(username, note){
     username = username.toLowerCase().trim();
-    var url = `https://github-social.firebaseio.com/${username}.json`;
+    var url = `https://github-social-app.firebaseio.com/${username}.json`;
     return fetch(url, {
       method: 'post',
       body: JSON.stringify(note)
