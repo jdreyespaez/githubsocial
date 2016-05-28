@@ -11,6 +11,7 @@ import Api from '../utils/api';
 import Repositories from './repositories';
 import Notes from './notes';
 import Badge from './badge';
+import ToolBar from './toolBar';
 
 class Dashboard extends React.Component{
   // S4.P3: Estructura de los botones y colores con función
@@ -34,6 +35,7 @@ class Dashboard extends React.Component{
   }
   // S5.P7 Apuntar a la siguiente vista que quiero
   goToProfile(){
+    console.log(this.props.navigator);
     this.props.navigator.push({
       name: 'profile',
       passProps: {userInfo: this.props.userInfo}
@@ -69,19 +71,10 @@ class Dashboard extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <View style={styles.toolBar}>
-            <View style={[styles.backButton, this.border('green')]}>
-              <Text>Atrás</Text>
-            </View>
-            <View style={[styles.title, this.border('blue')]}>
-              <Text>Githapp</Text>
-            </View>
-            <View style={[styles.backButton, this.border('green')]}>
-            </View>
-          </View>
+          <ToolBar />
         </View>
         <View style={styles.container}>
-          <View style={[styles.photoContainer]}>
+          <View style={[styles.badgeContainer]}>
             <Badge userInfo={this.props.userInfo} />
           </View>
           <View style={[styles.buttonsContainer]}>
@@ -123,18 +116,6 @@ var styles = StyleSheet.create({
   navBar: {
     height: 60,
   },
-  toolBar: {
-    flexDirection: 'row',
-    paddingTop: 30
-  },
-  backButton: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  title: {
-    flex: 5,
-    alignItems: 'center'
-  },
   container: {
     flex: 1
   },
@@ -142,7 +123,7 @@ var styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
   },
-  photoContainer: {
+  badgeContainer: {
     flex: 1,
   },
   buttonsContainer: {
@@ -150,6 +131,7 @@ var styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 24,
+    fontWeight: '100',
     color: 'white',
     alignSelf: 'center'
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Badge from './badge';
 import Separator from './helpers/separator';
+import ToolBar from './toolBar';
 
 import {
   Text,
@@ -38,22 +39,28 @@ class Profile extends React.Component{
       }
     });
     return (
-      <ScrollView style={styles.container}>
-        <View style={styles.badgeContainer}>
-          <Badge userInfo={this.props.userInfo} />
+      <View style={styles.mainContainer}>
+        <View style={styles.navBar}>
+          <ToolBar />
         </View>
-        {list}
-      </ScrollView>
+        <ScrollView style={styles.container}>
+          <Badge userInfo={this.props.userInfo} />
+          {list}
+        </ScrollView>
+      </View>
     )
   }
 };
 
 var styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+  },
+  navBar: {
+    height: 60,
+  },
   container: {
     flex: 1
-  },
-  badgeContainer: {
-    marginTop: 30,
   },
   buttonText: {
     fontSize: 18,
