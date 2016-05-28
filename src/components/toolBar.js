@@ -39,7 +39,8 @@ class ToolBar extends React.Component{
 var styles = StyleSheet.create({
   toolBar: {
     flexDirection: 'row',
-    paddingTop: 20
+    paddingTop: 20,
+
   },
   textToolBar: {
     fontSize: 14

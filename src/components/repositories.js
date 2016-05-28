@@ -2,6 +2,7 @@ import React from 'react';
 import Badge from './badge';
 import Separator from './helpers/separator';
 import Web from './helpers/web';
+import ToolBar from './toolBar';
 
 import {
   ScrollView,
@@ -43,10 +44,15 @@ class Repositories extends React.Component{
   });
     // S6.P2 Incluimos el componente reusable Badge
     return (
-      <ScrollView style={styles.container}>
-        <Badge userInfo={this.props.userInfo} />
-        {list}
-      </ScrollView>
+      <View style={styles.mainContainer}>
+        <View style={styles.navBar}>
+          <ToolBar />
+        </View>
+        <ScrollView style={styles.container}>
+          <Badge userInfo={this.props.userInfo} />
+          {list}
+        </ScrollView>
+      </View>
     )
   }
 };
@@ -58,6 +64,14 @@ class Repositories extends React.Component{
   };
 
 var styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1
+  },
+  navBar: {
+    height: 60,
+    borderBottomColor: 'rgba(21, 21, 21, 0.3)',
+    borderBottomWidth: 0.3,
+  },
   container: {
     flex: 1
   },
