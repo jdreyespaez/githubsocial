@@ -17,6 +17,11 @@ class Profile extends React.Component{
     return item[0] ? item[0].toUpperCase() + item.slice(1) : item;
   }
 
+  onPress = () => {
+    console.log('Profile -> Dashboard');
+    this.props.navigator.pop();
+  }
+
   render(){
     var userInfo = this.props.userInfo;
     var topicArr = ['company', 'location', 'followers', 'following', 'email', 'bio', 'public_repos'];
@@ -41,7 +46,7 @@ class Profile extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar />
+          <ToolBar backToPage={this.onPress} />
         </View>
         <ScrollView style={styles.container}>
           <Badge userInfo={this.props.userInfo} />
