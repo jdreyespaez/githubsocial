@@ -23,6 +23,11 @@ class Notes extends React.Component{
       error: ''
     }
   }
+
+  onPress = () => {
+    this.props.navigator.pop();
+  }
+
   handleChange(e){
     this.setState({
       note: e.nativeEvent.text
@@ -80,7 +85,7 @@ class Notes extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar />
+          <ToolBar backToPage={this.onPress}/>
         </View>
         <View style={styles.container}>
           <ListView

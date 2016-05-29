@@ -18,7 +18,6 @@ class Profile extends React.Component{
   }
 
   onPress = () => {
-    console.log('Profile -> Dashboard');
     this.props.navigator.pop();
   }
 

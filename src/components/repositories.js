@@ -21,6 +21,11 @@ class Repositories extends React.Component{
       passProps: {url}
     })
   }
+
+  onPress = () => {
+    this.props.navigator.pop();
+  }
+
   render(){
     // S6.P3 Vamos a mapear lo que viene de Repos
     // S6.P3.1 Mostrar vista vacía si no hay description
@@ -46,7 +51,7 @@ class Repositories extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar />
+          <ToolBar backToPage={this.onPress}/>
         </View>
         <ScrollView style={styles.container}>
           <Badge userInfo={this.props.userInfo} />
