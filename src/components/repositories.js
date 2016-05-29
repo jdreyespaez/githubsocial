@@ -22,7 +22,7 @@ class Repositories extends React.Component{
     })
   }
 
-  onPress = () => {
+  backToPage = () => {
     this.props.navigator.pop();
   }
 
@@ -51,7 +51,7 @@ class Repositories extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar backToPage={this.onPress}/>
+          <ToolBar onPress={this.backToPage}/>
         </View>
         <ScrollView style={styles.container}>
           <Badge userInfo={this.props.userInfo} />
