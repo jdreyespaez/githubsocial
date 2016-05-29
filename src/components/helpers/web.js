@@ -7,10 +7,18 @@ import {
 } from 'react-native';
 
 class Web extends React.Component{
+  backToPage(){
+    this.props.navigator.pop();
+  }
   render(){
     return(
-      <View style={styles.container}>
-        <WebView url={this.props.url} />
+      <View style={styles.mainContainer}>
+        <View style={styles.navBar}>
+          <ToolBar onPress={this.backToPage.bind(this)} />
+        </View>
+        <View style={styles.container}>
+          <WebView url={this.props.url} />
+        </View>
       </View>
     )
   }
@@ -21,6 +29,14 @@ Web.propTypes = {
 }
 
 var styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1
+  },
+  navBar: {
+    height: 50,
+    borderBottomColor: 'rgba(21, 21, 21, 0.3)',
+    borderBottomWidth: 0.3,
+  },
   container: {
     flex: 1,
     backgroundColor: '#F6F6EF',

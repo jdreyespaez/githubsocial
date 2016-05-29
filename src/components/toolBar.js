@@ -20,7 +20,7 @@ class ToolBar extends React.Component{
           </TouchableHighlight>
         </View>
         <View style={[styles.title]}>
-          <Text style={styles.textToolBarTitle}>Gitapp</Text>
+          <Text style={styles.textToolBarTitle}>Githapp</Text>
         </View>
         <View style={[styles.backButton]}>
         </View>

@@ -21,11 +21,9 @@ class Repositories extends React.Component{
       passProps: {url}
     })
   }
-
   backToPage = () => {
     this.props.navigator.pop();
   }
-
   render(){
     // S6.P3 Vamos a mapear lo que viene de Repos
     // S6.P3.1 Mostrar vista vacía si no hay description
