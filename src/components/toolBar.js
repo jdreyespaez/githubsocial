@@ -28,7 +28,7 @@ class ToolBar extends React.Component{
     )
   }
   onBackPress(){
-      this.props.backToPage();
+      this.props.onPress();
   }
   border(color) {
     return {

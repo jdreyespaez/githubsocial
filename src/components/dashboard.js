@@ -33,7 +33,7 @@ class Dashboard extends React.Component{
 
     return obj;
   }
-  onPress = () => {
+  backToPage = () => {
     this.props.navigator.pop();
   }
   // S5.P7 Apuntar a la siguiente vista que quiero
@@ -73,7 +73,7 @@ class Dashboard extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar backToPage={this.onPress} />
+          <ToolBar onPress={this.backToPage} />
         </View>
         <View style={styles.container}>
           <View style={[styles.badgeContainer]}>
