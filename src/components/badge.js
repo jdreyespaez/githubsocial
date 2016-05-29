@@ -14,7 +14,7 @@ class Badge extends React.Component{
         <View style={styles.wrapper}>
           <Image style={styles.image} source={{uri: this.props.userInfo.avatar_url}} />
           <Text style={styles.name}> {this.props.userInfo.name} </Text>
-          <Text style={styles.handle}> {this.props.userInfo.login} </Text>
+          <Text style={styles.handle}> @{this.props.userInfo.login} </Text>
         </View>
       </View>
     )

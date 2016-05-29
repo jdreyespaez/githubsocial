@@ -17,7 +17,7 @@ class Profile extends React.Component{
     return item[0] ? item[0].toUpperCase() + item.slice(1) : item;
   }
 
-  onPress = () => {
+  backToPage = () => {
     this.props.navigator.pop();
   }
 
@@ -45,7 +45,7 @@ class Profile extends React.Component{
     return (
       <View style={styles.mainContainer}>
         <View style={styles.navBar}>
-          <ToolBar backToPage={this.onPress} />
+          <ToolBar onPress={this.backToPage} />
         </View>
         <ScrollView style={styles.container}>
           <Badge userInfo={this.props.userInfo} />
