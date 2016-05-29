@@ -110,7 +110,7 @@ var styles = StyleSheet.create({
     flex: 1
   },
   navBar: {
-    height: 60,
+    height: 50,
     borderBottomColor: 'rgba(21, 21, 21, 0.3)',
     borderBottomWidth: 0.3,
   },

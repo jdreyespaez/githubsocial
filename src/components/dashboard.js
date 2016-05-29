@@ -34,7 +34,6 @@ class Dashboard extends React.Component{
     return obj;
   }
   onPress = () => {
-    console.log('Hola JD!');
     this.props.navigator.pop();
   }
   // S5.P7 Apuntar a la siguiente vista que quiero
@@ -117,7 +116,7 @@ var styles = StyleSheet.create({
     flex: 1
   },
   navBar: {
-    height: 60,
+    height: 50,
   },
   container: {
     flex: 1

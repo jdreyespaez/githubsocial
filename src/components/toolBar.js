@@ -11,9 +11,10 @@ class ToolBar extends React.Component{
     console.log(this.props)
     return (
       <View style={styles.toolBar}>
-        <View style={[styles.backButton ]}>
+        <View style={styles.backButton}>
           <TouchableHighlight
             underlayColor={'white'}
+            style={[styles.buttonArea]}
             onPress={this.onBackPress.bind(this)}>
             <Text style={styles.textToolBar}>Atrás</Text>
           </TouchableHighlight>
@@ -40,8 +41,7 @@ class ToolBar extends React.Component{
 var styles = StyleSheet.create({
   toolBar: {
     flexDirection: 'row',
-    paddingTop: 20,
-
+    paddingTop: 15,
   },
   textToolBar: {
     fontSize: 14
@@ -53,6 +53,10 @@ var styles = StyleSheet.create({
   title: {
     flex: 5,
     alignItems: 'center'
+  },
+  buttonArea: {
+    paddingBottom: 15,
+    paddingRight: 10
   },
   backButton: {
     flex: 1,

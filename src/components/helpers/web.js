@@ -1,4 +1,5 @@
 import React from 'react';
+import ToolBar from '../toolBar';
 import {
   View,
   WebView,
@@ -22,7 +23,6 @@ Web.propTypes = {
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30,
     backgroundColor: '#F6F6EF',
     flexDirection: 'column',
   }

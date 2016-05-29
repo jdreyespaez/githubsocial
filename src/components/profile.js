@@ -61,7 +61,7 @@ var styles = StyleSheet.create({
     flex: 1,
   },
   navBar: {
-    height: 60,
+    height: 50,
   },
   container: {
     flex: 1
